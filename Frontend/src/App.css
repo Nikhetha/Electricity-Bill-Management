@@ -1,0 +1,159 @@
+/* Global Styles */
+:root {
+  /* Define global CSS variables for consistent theming */
+  --font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --background-color-light: #95c6188e; /* Light background color */
+  --background-color-dark: #95c6188e; /* Dark background color */
+  --text-color-light: #000000; /* Text color for light backgrounds */
+  --text-color-dark: rgba(0, 0, 0, 0.87); /* Text color for dark backgrounds */
+  --link-color: #646cff; /* Default link color */
+  --link-hover-color: #535bf2; /* Link color on hover */
+  --button-background: #add8e6; /* Background color for buttons */
+  --button-hover-border: #00008b; /* Border color on button hover */
+  --error-color: #ff4d4d; /* Color for error messages */
+  --border-color: #ddd; /* Border color for table and input fields */
+  --primary-font-size: 1em; /* Base font size for text */
+  --heading-font-size: 3.2em; /* Font size for headings */
+  --button-padding: 0.8em 1.2em; /* Padding for buttons */
+  --input-padding: 0.6em; /* Padding for input fields */
+}
+
+*,
+*::before,
+*::after {
+  /* Apply box-sizing to all elements and their pseudo-elements */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+body {
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  font-family: var(--font-family); /* Apply the global font */
+  background-color: var(--background-color-dark); /* Set background color */
+  color: var(--text-color-dark); /* Set text color */
+  line-height: 1.5; /* Improve readability by adjusting line height */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.container {
+  max-width: 1200px; /* Limit the maximum width of the container */
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 1em; /* Add padding around the content */
+}
+
+header {
+  width: 100%; /* Full width for the header */
+  background-color: #333; /* Dark background for the header */
+  color: #fff; /* White text color */
+  padding: 1em 0; /* Top and bottom padding for header; no left padding */
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Stack header elements vertically */
+  justify-content: space-between; /* Space out child elements */
+  align-items: center; /* Center child elements horizontally */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add subtle shadow for depth */
+}
+
+header h1 {
+  margin: 0; /* Remove default margin for heading */
+}
+
+nav {
+  display: flex; /* Use flexbox for navigation layout */
+  gap: 1em; /* Space out navigation buttons */
+}
+
+nav button {
+  border: none; /* Remove default border */
+  border-radius: 8px; /* Round button corners */
+  padding: var(--button-padding); /* Apply padding from variable */
+  font-size: var(--primary-font-size); /* Set font size for button text */
+  font-weight: 500; /* Set font weight */
+  background-color: var(--button-background); /* Background color from variable */
+  color: var(--text-color-light); /* Text color for buttons */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  transition: border-color 0.25s, background-color 0.25s; /* Smooth transition for hover effects */
+  width: 150px; /* Fixed width for buttons */
+}
+
+nav button:hover {
+  border-color: var(--button-hover-border); /* Change border color on hover */
+  background-color: #87cefa; /* Change background color on hover */
+}
+
+form {
+  width: 100%; /* Full width for form */
+  max-width: 450px; /* Limit maximum width */
+  margin: 1em auto; /* Center the form horizontally with margin */
+  padding: 1em; /* Add padding inside the form */
+  background-color: #bd37d17b; /* Background color with opacity */
+  border-radius: 8px; /* Round corners of the form */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add subtle shadow for depth */
+  display: flex; /* Use flexbox for form layout */
+  flex-direction: column; /* Stack form elements vertically */
+  gap: 1em; /* Space out form elements */
+}
+
+form .form-group {
+  display: flex; /* Use flexbox for grouping form elements */
+  align-items: center; /* Align items vertically */
+  gap: 1em; /* Space out label and input */
+}
+
+form label {
+  flex: 1; /* Allow label to take up necessary space */
+  font-size: var(--primary-font-size); /* Set font size for label */
+  margin-left:20px;
+}
+
+form input[type="text"] {
+  flex: 2; /* Allow input to take up more space */
+  padding: var(--input-padding); /* Apply padding from variable */
+  border: 1px solid var(--border-color); /* Set border with variable color */
+  border-radius: 4px; /* Round corners of the input field */
+  font-size: var(--primary-font-size); /* Set font size for input text */
+  width: 50%; /* Set input width to 50% of its container */
+  margin-left:12px;
+}
+
+form button {
+  background-color: var(--button-background); /* Background color from variable */
+  color: var(--text-color-light); /* Text color for button */
+  border: 1px solid transparent; /* Transparent border */
+  border-radius: 12px; /* Round button corners */
+  width: 90px; /* Fixed width for button */
+  height: 40px; /* Fixed height for button */
+}
+
+form button:hover {
+  background-color: #87cefa; /* Change background color on hover */
+}
+
+.error-message {
+  color: var(--error-color); /* Color for error messages */
+  font-weight: bold; /* Make error messages bold */
+}
+
+.record-table {
+  width: 100%; /* Full width for table */
+  border-collapse: collapse; /* Collapse table borders for cleaner look */
+  margin-top: 1em; /* Add margin on top */
+}
+
+.record-table th, .record-table td {
+  border: 1.5px solid var(--border-color); /* Border color from variable */
+  padding: 0.8em; /* Add padding inside table cells */
+  text-align: center; /* Center text alignment */
+}
+
+.record-table th {
+  background-color: #ebc3b7; /* Background color for table headers */
+  font-weight: bold; /* Bold text for headers */
+}
+
+.record-table td {
+  background-color: #f9f9f9; /* Slightly different background for table cells */
+}
+
+.record-table tbody tr:nth-child(even) {
+  background-color: #f1f1f1; /* Zebra striping for better readability */
+}
